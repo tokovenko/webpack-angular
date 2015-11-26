@@ -1,7 +1,7 @@
-import test from './module/test/test.module.js';
+import home from './module/home/home.js';
+
 import "./css/main.css";
 import "./index.html";
-import angular from 'angular'
+import angular from 'angular';
 
-console.log('start app...');
-test();
+angular.module('app', ['app.home']);
