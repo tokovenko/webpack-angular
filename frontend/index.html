@@ -6,7 +6,18 @@
         <link href="css/app.css" rel="stylesheet">
     </head>
     <body>
-        <div home></div>
+        <ul>
+            <li ui-sref-active="active">
+                <a ui-sref="home">Home</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="about">About</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="news">News</a>
+            </li>
+        </ul>
+        <div ui-view></div>
         <script src="js/common.js"></script>
         <script src="js/app.js"></script>
     </body>
