@@ -65,3 +65,6 @@ if(NODE_ENV=='production') {
         })
     )
 }
+
+//for running dev server
+//webpack-dev-server --inline --history-api-fallback --content-base /public
