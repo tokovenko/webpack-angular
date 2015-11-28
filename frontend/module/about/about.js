@@ -6,7 +6,8 @@ export default angular
     .config(function ($stateProvider) {
         $stateProvider.state('about', {
             url: '/about',
-            templateUrl: template
+            templateUrl:  '/' + template,
+            controller: 'AboutController'
         });
     })
     .controller('AboutController', function($scope) {
