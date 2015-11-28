@@ -1,3 +1,10 @@
-<div class="news" ng-controller="NewsController">
+<div class="news">
     {{title}}
+    <div class="list">
+        <ul>
+            <li ng-repeat="news in newsList">
+                <a ui-sref="news-view({id: news.id})">{{news.name}}</a>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -15,4 +15,12 @@ angular
             enabled: true,
             requireBase: false
         });
+    })
+    .run(function ($rootScope) {
+        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+        });
+        $rootScope.$on('$stateChangeSuccess', function(e, toState, toParams, fromState, fromParams) {
+        });
+        $rootScope.$on('$stateChangeError', function(e, toState, toParams, fromState, fromParams) {
+        });
     });

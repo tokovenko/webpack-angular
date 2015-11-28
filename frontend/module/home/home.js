@@ -6,7 +6,8 @@ export default angular
     .config(function ($stateProvider) {
         $stateProvider.state('home', {
             url: '/',
-            templateUrl: template
+            templateUrl:  '/' + template,
+            controller: 'HomeController'
         });
     })
     .controller('HomeController', function($scope) {
