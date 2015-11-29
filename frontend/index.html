@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="/css/app.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-controller="MainController as main">
         <div id="page">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -26,8 +26,13 @@
                     </ul>
                 </div><!-- /.container-fluid -->
             </nav>
+            <div id="content">
+                <div ui-view></div>
+                <div class="spinner" ng-if="main.preloader">
+                    <div class="spinner-loader"></div>
+                </div>
+            </div>
         </div>
-        <div ui-view></div>
         <script src="/js/common.js"></script>
         <script src="/js/app.js"></script>
     </body>

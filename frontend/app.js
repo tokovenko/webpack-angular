@@ -6,6 +6,7 @@ import about from './module/about/about.js';
 import news from './module/news/news.js';
 
 import "./css/main.css";
+import "./css/spinner.css";
 import "./index.html";
 
 angular
@@ -16,11 +17,16 @@ angular
             requireBase: false
         });
     })
-    .run(function ($rootScope) {
-        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+    .controller('MainController', function ($rootScope, $scope) {
+        var self = this;
+        self.preloader = false;
+        $rootScope.$on('$stateChangeStart', function() {
+            self.preloader = true;
         });
-        $rootScope.$on('$stateChangeSuccess', function(e, toState, toParams, fromState, fromParams) {
+        $rootScope.$on('$stateChangeSuccess', function() {
+            self.preloader = false;
         });
-        $rootScope.$on('$stateChangeError', function(e, toState, toParams, fromState, fromParams) {
+        $rootScope.$on('$stateChangeError', function() {
+            self.preloader = false;
         });
     });
