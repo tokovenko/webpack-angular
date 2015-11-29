@@ -2,6 +2,7 @@ import angular from 'angular';
 import newsTemplate from './news.html';
 import newsViewTemplate from './news-view.html';
 import NewsFactory from './factory/News.js';
+import breadcrumbs from './../../common/service/Breadcrumbs.js';
 
 export default angular
     .module('app.news', ['ui.router', 'app.news.factory'])
@@ -28,11 +29,20 @@ export default angular
                 }
             });
     })
-    .controller('NewsController', function($scope, newsList) {
+    .controller('NewsController', ['$scope','app.common.service.Breadcrumbs','newsList',function($scope, Breadcrumbs, newsList) {
+        Breadcrumbs.clear()
+            .add('Home', 'home')
+            .add('News');
+
         $scope.title = 'News page';
         $scope.newsList = newsList;
-    })
-    .controller('NewsViewController', function($scope, newsItem) {
+    }])
+    .controller('NewsViewController', ['$scope','app.common.service.Breadcrumbs','newsItem',function($scope, Breadcrumbs, newsItem) {
+        Breadcrumbs.clear()
+            .add('Home', 'home')
+            .add('News', 'news')
+            .add(newsItem.name);
+
         $scope.title = 'News view page';
         $scope.news = newsItem;
-    });
+    }]);

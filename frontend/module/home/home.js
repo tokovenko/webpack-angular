@@ -1,5 +1,6 @@
 import angular from 'angular';
 import template from './home.html';
+import breadcrumbs from './../../common/service/Breadcrumbs.js';
 
 export default angular
     .module('app.home', ['ui.router'])
@@ -10,6 +11,8 @@ export default angular
             controller: 'HomeController'
         });
     })
-    .controller('HomeController', function($scope) {
+    .controller('HomeController', ['$scope', 'app.common.service.Breadcrumbs', function($scope, Breadcrumbs) {
+        Breadcrumbs.clear();
+
         $scope.title = 'Home page';
-    });
+    }]);
