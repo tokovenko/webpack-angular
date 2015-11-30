@@ -13,8 +13,8 @@ export default function ($stateProvider) {
                 }
             }
         })
-        .state('news-view', {
-            url: '/news/:id',
+        .state('news.view', {
+            url: '/:id',
             templateUrl:  '/' + newsViewTemplate,
             controller: "NewsViewController",
             resolve: {

@@ -3,8 +3,9 @@
     <div class="list">
         <ul>
             <li ng-repeat="news in newsList">
-                <a ui-sref="news-view({id: news.id})">{{news.name}}</a>
+                <a ui-sref="news.view({id: news.id})">{{news.name}}</a>
             </li>
         </ul>
     </div>
+    <div ui-view></div>
 </div>
