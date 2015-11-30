@@ -1,10 +1,10 @@
 import angular from 'angular';
 import router from 'angular-ui-router';
 
-import home from './module/home/home.js';
-import about from './module/about/about.js';
-import news from './module/news/news.js';
-import breadcrumbs from './common/service/Breadcrumbs.js';
+import home from './module/home/home';
+import about from './module/about/about';
+import news from './module/news/news';
+import breadcrumbs from './common/service/Breadcrumbs';
 
 import "./css/main.css";
 import "./css/spinner.css";

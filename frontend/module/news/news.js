@@ -1,12 +1,9 @@
 import angular from 'angular';
 
-import routes from './routes.js';
-
-import NewsController from './controller/NewsController.js';
-import NewsViewController from './controller/NewsViewController.js';
-
-import NewsFactory from './factory/News.js';
-import breadcrumbs from './../../common/service/Breadcrumbs.js';
+import routes from './routes';
+import NewsController from './controller/NewsController';
+import NewsViewController from './controller/NewsViewController';
+import NewsFactory from './factory/News';
 
 export default angular
     .module('app.news', ['ui.router', 'app.news.factory'])
