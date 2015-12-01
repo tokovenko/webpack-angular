@@ -49,6 +49,9 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'file?name=[path][name].[ext]' + (isDevelopment() ? '' : '!html-minify')
+        }, {
+            test: /\.json$/,
+            loader: 'file?name=[path][name].[ext]'
         }]
 
     }

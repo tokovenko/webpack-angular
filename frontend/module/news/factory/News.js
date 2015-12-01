@@ -1,15 +1,20 @@
 import angular from 'angular';
+import newsJson from './../../../news.json';
 
 export default angular
     .module('app.news.factory', [])
-    .service('News', function($q, $timeout) {
+    .service('News', function($q, $timeout, $http) {
         var news = {};
 
         news.findAll = function() {
             var defer = $q.defer();
-            $timeout(function() {
-                defer.resolve([{id: 1, name: 'News 1'}, {id: 2, name: 'News 2'}, {id: 3, name: 'News 3'}]);
-            }, 500);
+            $http({
+                url: '/news.json',
+                type: 'GET',
+                timeout: 2000
+            }).then(function(response) {
+                defer.resolve(response.data);
+            });
             return defer.promise;
         };
 

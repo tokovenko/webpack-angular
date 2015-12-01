@@ -3,9 +3,23 @@
     <div class="list">
         <ul>
             <li ng-repeat="news in newsList">
-                <a ui-sref="news.view({id: news.id})">{{news.name}}</a>
+                <div class="news-preview">
+                    <a ui-sref="news.view({id: news.id})" class="image">
+                        <img ng-src="{{news.image}}">
+                    </a>
+                    <div class="title">
+                        <a ui-sref="news.view({id: news.id})">{{news.name}}</a>
+                    </div>
+                    <div class="time">
+                            {{news.create_time | date: "MM/dd/yyyy 'at' h:mma"}}
+                    </div>
+                    <div class="description">
+                        {{news.short_text}}
+                    </div>
+                </div>
             </li>
         </ul>
+        <div class="clearfix"></div>
     </div>
     <div ui-view></div>
 </div>

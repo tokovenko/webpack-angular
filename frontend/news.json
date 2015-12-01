@@ -1,0 +1,19 @@
+[{
+  "id": "3",
+  "name": "News 3",
+  "create_time": "1448999531",
+  "short_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg"
+}, {
+  "id": "2",
+  "name": "News 2",
+  "create_time": "1447962731",
+  "short_text": "Nulla sit amet semper turpis, in eleifend tortor.",
+  "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg"
+}, {
+  "id": "1",
+  "name": "News 1",
+  "create_time": "1444938731",
+  "short_text": "Nunc non odio ac sem aliquet viverra. Sed eu purus elit. Phasellus ac iaculis odio. In eu libero a augue imperdiet elementum a sed elit.",
+  "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg"
+}]
