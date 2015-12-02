@@ -10,6 +10,11 @@
                 <div class="image">
                     <img ng-src="{{news.image}}">
                 </div>
+                <div class="pull-right statistic">
+                    <div class="likes" ng-class="{'liked':news.isLiked}" ng-click="news.setLike(!news.isLiked);">
+                        <i class="glyphicon glyphicon-thumbs-up"></i> {{news.likesCount}}
+                    </div>
+                </div>
                 <div class="time">
                     {{news.create_time | date: "MM/dd/yyyy 'at' h:mma"}}
                 </div>
@@ -17,6 +22,32 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra maximus porttitor. Sed pulvinar id purus ac porta. Aenean ultrices id augue sed auctor. Praesent porttitor erat eget erat cursus, sed hendrerit diam dapibus. Suspendisse aliquet orci quis vestibulum lobortis. Donec sodales libero odio, non auctor mi ultrices et. Suspendisse ac justo lacus. Aenean sollicitudin urna ac dui mollis ullamcorper. Sed suscipit pretium dolor, imperdiet commodo metus aliquam eu. Praesent congue dui vel diam venenatis consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc accumsan elit in erat bibendum, vitae placerat lectus faucibus.</p>
                     <p>Nulla sit amet semper turpis, in eleifend tortor. Nullam venenatis turpis eget suscipit convallis. Nulla sed erat imperdiet, fringilla tellus a, lacinia ipsum. Sed eget venenatis lacus, vel facilisis ante. Nullam fermentum vehicula ultrices. Vivamus quis eros ut sem blandit congue. Duis pharetra sit amet eros vehicula blandit. Vestibulum vel vehicula ex.</p>
                     <p>Nunc non odio ac sem aliquet viverra. Sed eu purus elit. Phasellus ac iaculis odio. In eu libero a augue imperdiet elementum a sed elit. Morbi eu diam non enim cursus pharetra. Vivamus eget metus nec urna cursus fringilla. Proin vehicula luctus turpis, id dapibus quam tristique non. Fusce accumsan dolor tempus faucibus fringilla. Praesent dapibus tortor ultrices porta tempus. Aliquam erat volutpat. Aenean ut quam nec lorem accumsan aliquam. Vivamus quis tellus et augue placerat vehicula quis quis magna. Sed in leo accumsan, vestibulum nulla non, volutpat nulla. Vestibulum dapibus, urna vitae vehicula bibendum, nulla dui bibendum dui, eu luctus turpis orci ut odio.</p>
+                </div>
+            </div>
+            <div class="news-comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <div class="author">Ugen</div>
+                    <div class="date">23.03.12 32:11</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra maximus porttitor.
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="author">E.T.</div>
+                    <div class="date">11.01.12 10:02</div>
+                    <div class="text">
+                        Nulla sit amet semper turpis, in eleifend tortor. Nullam venenatis turpis eget suscipit convallis. Nulla sed erat imperdiet, fringilla tellus a, lacinia ipsum.
+                    </div>
+                </div>
+                <div class="add-comment">
+                    <form>
+                        <div class="form-group">
+                            <label for="comment-text">Your comment</label>
+                            <textarea class="form-control" id="comment-text" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

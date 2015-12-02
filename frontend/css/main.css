@@ -100,7 +100,9 @@ body {
             font-size: 12px;
             color: #B5B5B5;
         }
-
+.news-page {
+    position: relative;
+}
     .modal-news-bg {
         position: fixed;
         left: 0;
@@ -111,10 +113,11 @@ body {
         background: black;
     }
     .modal-news {
-        position: fixed;
+        position: absolute;
         left: 0;
         right: 0;
-        top: 100px;
+        top: -100px;
+        width:750px;
     }
         .news-view {
         }
@@ -129,3 +132,39 @@ body {
                 color: #B5B5B5;
                 margin: 5px 0;
             }
+            .news-view .statistic {
+                font-size: 15px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+                .news-view .statistic .likes {
+                    cursor: pointer;
+                }
+                .news-view .statistic .likes.liked {
+                    color: #46A023;
+                }
+.news-comments {
+    margin-top: 10px;
+}
+    .news-comments>h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .news-comments .comment {
+        margin-bottom: 10px;
+        padding-left: 15px;
+        border-left: 5px solid #C1BABA;
+    }
+        .news-comments .comment .author{
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .news-comments .comment .date{
+            font-size: 12px;
+            color: #989898;
+        }
