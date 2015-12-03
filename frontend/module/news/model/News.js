@@ -1,7 +1,7 @@
 import Comment from './Comment';
 
 class News {
-    constructor (attributes = []) {
+    constructor (attributes = {}) {
         this.id = attributes.id || '';
         this.name = attributes.name || '';
         this.create_time = attributes.create_time || '';

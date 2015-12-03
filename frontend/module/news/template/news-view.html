@@ -11,7 +11,7 @@
                     <img ng-src="{{news.image}}">
                 </div>
                 <div class="pull-right statistic">
-                    <div class="likes" ng-class="{'liked':news.isLiked}" ng-click="news.setLike(!news.isLiked);">
+                    <div class="likes" ng-class="{'liked':news.isLiked}" ng-click="setLike(!news.isLiked);">
                         <i class="glyphicon glyphicon-thumbs-up"></i> {{news.likesCount}}
                     </div>
                 </div>

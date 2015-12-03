@@ -1,5 +1,5 @@
 class Comment {
-    constructor (attributes = []) {
+    constructor (attributes = {}) {
         this.id = attributes.id || '';
         this.author = attributes.author || '';
         this.create_time = attributes.create_time || '';

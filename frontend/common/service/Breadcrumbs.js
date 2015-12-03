@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 export default angular
     .module('app.common.service.Breadcrumbs', [])
     .service('app.common.service.Breadcrumbs', function() {
