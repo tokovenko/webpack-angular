@@ -1,5 +1,6 @@
 import angular from 'angular';
 import newsJson from './../../../news.json';
+import News from './../model/News';
 
 export default angular
     .module('app.news.factory', [])
@@ -13,7 +14,9 @@ export default angular
                 type: 'GET',
                 timeout: 2000
             }).then(function(response) {
-                defer.resolve(response.data);
+                let news = response.data || [];
+                let models = news.map(data => new News(data));
+                defer.resolve(models);
             });
             return defer.promise;
         };
