@@ -1,3 +1,5 @@
+import breadcrumbs from './../../../common/service/Breadcrumbs';
+
 let AboutController = function($scope, Breadcrumbs) {
     Breadcrumbs.clear()
         .add('Home', 'home')
@@ -6,4 +8,4 @@ let AboutController = function($scope, Breadcrumbs) {
     $scope.title = 'About page';
 };
 
-export default ['$scope', 'app.common.service.Breadcrumbs', AboutController];
+export default ['$scope', breadcrumbs, AboutController];

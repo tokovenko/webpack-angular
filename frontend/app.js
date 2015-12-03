@@ -12,7 +12,7 @@ import "./css/spinner.css";
 import "./index.html";
 
 angular
-    .module('app', ['app.about','app.home','app.news','app.error','app.common.service.Breadcrumbs','ui.router'])
+    .module('app', [about, home, news, error, breadcrumbs, router])
     .config(function ($locationProvider, $urlRouterProvider, $stateProvider) {
         $locationProvider.html5Mode({
             enabled: true,
@@ -21,7 +21,7 @@ angular
 
         $urlRouterProvider.otherwise('/404');
     })
-    .controller('MainController', ['$rootScope', '$scope', 'app.common.service.Breadcrumbs', function ($rootScope, $scope, Breadcrumbs) {
+    .controller('MainController', ['$rootScope', '$scope', breadcrumbs, function ($rootScope, $scope, Breadcrumbs) {
         var self = this;
         self.breadcrumbs = Breadcrumbs;
 

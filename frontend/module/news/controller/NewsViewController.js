@@ -1,3 +1,5 @@
+import breadcrumbs from './../../../common/service/Breadcrumbs';
+
 let NewsViewController = function($scope, Breadcrumbs, newsItem) {
 
     $scope.addComment = function(data) {
@@ -8,4 +10,4 @@ let NewsViewController = function($scope, Breadcrumbs, newsItem) {
     $scope.news = newsItem;
 };
 
-export default ['$scope','app.common.service.Breadcrumbs', 'newsItem', NewsViewController];
+export default ['$scope', breadcrumbs, 'newsItem', NewsViewController];

@@ -1,3 +1,5 @@
+import breadcrumbs from './../../../common/service/Breadcrumbs';
+
 let NewsController = function($scope, Breadcrumbs, newsList) {
     Breadcrumbs.clear()
         .add('Home', 'home')
@@ -7,4 +9,4 @@ let NewsController = function($scope, Breadcrumbs, newsList) {
     $scope.newsList = newsList;
 };
 
-export default ['$scope','app.common.service.Breadcrumbs','newsList', NewsController];
+export default ['$scope', breadcrumbs, 'newsList', NewsController];

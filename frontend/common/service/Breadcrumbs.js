@@ -33,4 +33,5 @@ export default angular
                             </li>
                         </ol>`
         }
-    });
+    })
+    .name;

@@ -1,4 +1,3 @@
-import angular from 'angular';
 import newsJson from './../../../news.json';
 import News from './../model/News';
 
@@ -10,7 +9,7 @@ export default angular
         news.findAll = function() {
             var defer = $q.defer();
             $http({
-                url: '/news.json',
+                url: '/' + newsJson,
                 type: 'GET',
                 timeout: 2000
             }).then(function(response) {
@@ -31,4 +30,4 @@ export default angular
 
 
         return news;
-});
+}).name;

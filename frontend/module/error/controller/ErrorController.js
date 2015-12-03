@@ -1,3 +1,5 @@
+import breadcrumbs from './../../../common/service/Breadcrumbs';
+
 let ErrorController = function($scope, Breadcrumbs) {
     Breadcrumbs.clear()
         .add('Home', 'home')
@@ -6,4 +8,4 @@ let ErrorController = function($scope, Breadcrumbs) {
     $scope.title = 'Page not found';
 };
 
-export default ['$scope', 'app.common.service.Breadcrumbs', ErrorController];
+export default ['$scope', breadcrumbs, ErrorController];
