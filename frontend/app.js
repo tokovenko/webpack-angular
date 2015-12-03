@@ -4,6 +4,7 @@ import router from 'angular-ui-router';
 import home from './module/home/home';
 import about from './module/about/about';
 import news from './module/news/news';
+import error from './module/error/error';
 import breadcrumbs from './common/service/Breadcrumbs';
 
 import "./css/main.css";
@@ -11,12 +12,14 @@ import "./css/spinner.css";
 import "./index.html";
 
 angular
-    .module('app', ['app.about','app.home','app.news','app.common.service.Breadcrumbs','ui.router'])
-    .config(function ($locationProvider) {
+    .module('app', ['app.about','app.home','app.news','app.error','app.common.service.Breadcrumbs','ui.router'])
+    .config(function ($locationProvider, $urlRouterProvider, $stateProvider) {
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false
         });
+
+        $urlRouterProvider.otherwise('/404');
     })
     .controller('MainController', ['$rootScope', '$scope', 'app.common.service.Breadcrumbs', function ($rootScope, $scope, Breadcrumbs) {
         var self = this;
@@ -29,7 +32,7 @@ angular
         $rootScope.$on('$stateChangeSuccess', function() {
             self.preloader = false;
         });
-        $rootScope.$on('$stateChangeError', function() {
+        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
             self.preloader = false;
         });
     }]);
