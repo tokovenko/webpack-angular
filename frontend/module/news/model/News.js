@@ -1,3 +1,5 @@
+import Comment from './Comment';
+
 class News {
     constructor (attributes = []) {
         this.id = attributes.id || '';
@@ -7,7 +9,10 @@ class News {
         this.image = attributes.image || '';
         this.likesCount = attributes.likesCount || 0;
         this.isLiked = attributes.isLiked || false;
-        this.comments = attributes.comments || [];
+
+        let comments = attributes.comments || [];
+        this.comments = comments.map(attrs => new Comment(attrs))
+
     }
 
     setLike(like) {
@@ -16,10 +21,10 @@ class News {
     }
 
     addComment(data) {
-        var comment = Object.assign({}, data);
-        comment.author = "E.T.";
-        comment.create_time = new Date();
-        this.comments.push(comment);
+        var attrs = Object.assign({}, data);
+        attrs.author = "E.T.";
+        attrs.create_time = new Date();
+        this.comments.push(new Comment(attrs));
     }
 }
 
