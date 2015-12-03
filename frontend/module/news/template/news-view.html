@@ -24,29 +24,22 @@
                     <p>Nunc non odio ac sem aliquet viverra. Sed eu purus elit. Phasellus ac iaculis odio. In eu libero a augue imperdiet elementum a sed elit. Morbi eu diam non enim cursus pharetra. Vivamus eget metus nec urna cursus fringilla. Proin vehicula luctus turpis, id dapibus quam tristique non. Fusce accumsan dolor tempus faucibus fringilla. Praesent dapibus tortor ultrices porta tempus. Aliquam erat volutpat. Aenean ut quam nec lorem accumsan aliquam. Vivamus quis tellus et augue placerat vehicula quis quis magna. Sed in leo accumsan, vestibulum nulla non, volutpat nulla. Vestibulum dapibus, urna vitae vehicula bibendum, nulla dui bibendum dui, eu luctus turpis orci ut odio.</p>
                 </div>
             </div>
-            <div class="news-comments">
+            <div class="news-comments" ng-if="news.comments">
                 <h2>Comments</h2>
-                <div class="comment">
-                    <div class="author">Ugen</div>
-                    <div class="date">23.03.12 32:11</div>
+                <div ng-repeat="comment in news.comments" class="comment">
+                    <div class="author">{{comment.author}}</div>
+                    <div class="date">{{comment.create_time | date: "MM/dd/yyyy 'at' h:mma"}}</div>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi viverra maximus porttitor.
-                    </div>
-                </div>
-                <div class="comment">
-                    <div class="author">E.T.</div>
-                    <div class="date">11.01.12 10:02</div>
-                    <div class="text">
-                        Nulla sit amet semper turpis, in eleifend tortor. Nullam venenatis turpis eget suscipit convallis. Nulla sed erat imperdiet, fringilla tellus a, lacinia ipsum.
+                        {{comment.text}}
                     </div>
                 </div>
                 <div class="add-comment">
-                    <form>
+                    <form novalidate>
                         <div class="form-group">
                             <label for="comment-text">Your comment</label>
-                            <textarea class="form-control" id="comment-text" rows="3"></textarea>
+                            <textarea class="form-control" ng-model="comment.text" id="comment-text" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success" ng-click="news.addComment(comment)">Submit</button>
                     </form>
                 </div>
             </div>

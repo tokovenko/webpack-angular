@@ -5,7 +5,18 @@
   "short_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg",
   "likesCount": "4",
-  "isLiked": true
+  "isLiked": true,
+  "comments": [{
+      "id": "1",
+      "author": "Evgeniy Tokovenko",
+      "create_time": "1444938731",
+      "text": "Nunc non odio ac sem aliquet viverra. Sed eu purus elit. Phasellus ac iaculis odio. In eu libero a augue imperdiet elementum a sed elit."
+    }, {
+      "id": "2",
+      "author": "Anna Yunchik",
+      "create_time": "1444938731",
+      "text": "Nulla sit amet semper turpis, in eleifend tortor.."
+    }]
 }, {
   "id": "2",
   "name": "News 2",

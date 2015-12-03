@@ -19,7 +19,7 @@ export default function ($stateProvider) {
             controller: "NewsViewController",
             resolve: {
                 newsItem: function(News, $stateParams) {
-                    return News.findOne($stateParams.id-1);
+                    return new News.findOne($stateParams.id-1);
                 }
             }
         });
