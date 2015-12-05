@@ -21,10 +21,12 @@ class News {
     }
 
     addComment(data) {
-        var attrs = Object.assign({}, data);
-        attrs.author = "E.T.";
-        attrs.create_time = new Date();
-        this.comments.push(new Comment(attrs));
+        let attrs = Object.assign({}, data);
+            attrs.author = "E.T.";
+            attrs.create_time = new Date();
+
+        let model = new Comment(attrs);
+        return model.save();
     }
 }
 

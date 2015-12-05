@@ -1,9 +1,9 @@
-class Comment {
-    constructor (attributes = {}) {
-        this.id = attributes.id || '';
-        this.author = attributes.author || '';
-        this.create_time = attributes.create_time || '';
-        this.text = attributes.text || '';
+import Model from './../../../common/model/Model';
+
+class Comment extends Model {
+    constructor (attrs = {}) {
+        let attributes = ['id', 'author', 'create_time', 'text'];
+        super(attributes, attrs);
     }
 }
 
