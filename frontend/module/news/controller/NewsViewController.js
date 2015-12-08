@@ -1,9 +1,9 @@
 import breadcrumbs from './../../../common/service/Breadcrumbs';
 import alert from './../../../common/service/Alert';
 
-let NewsViewController = function($scope, Breadcrumbs, Alert, newsItem) {
+let NewsViewController = ($scope, Breadcrumbs, Alert, newsItem) => {
 
-    $scope.addComment = function(data) {
+    $scope.addComment = (data) => {
         newsItem
             .addComment(data)
             .then(function(comment) {
@@ -18,9 +18,15 @@ let NewsViewController = function($scope, Breadcrumbs, Alert, newsItem) {
                 });
             });
     };
-    $scope.setLike = function(like) {
-        newsItem.setLike(like);
-        Alert.add('success', 'Like ' + (like ? 'added' : 'removed') + ' successfully');
+
+    $scope.setLike = (like) => {
+        newsItem.setLike(like).then((data) => {
+            $scope.$apply(() => {
+                newsItem.isLiked = data;
+                console.log('newsItem.isLiked: ', newsItem.isLiked)
+                Alert.add('success', 'Like ' + (data ? 'added' : 'removed') + ' successfully');
+            });
+        });
     };
 
     $scope.news = newsItem;

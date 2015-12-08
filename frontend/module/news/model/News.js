@@ -1,4 +1,5 @@
 import Comment from './Comment';
+import Like from './Like';
 
 class News {
     constructor (attributes = {}) {
@@ -8,23 +9,31 @@ class News {
         this.short_text = attributes.short_text || '';
         this.image = attributes.image || '';
         this.likesCount = attributes.likesCount || 0;
-        this.isLiked = attributes.isLiked || false;
 
         let comments = attributes.comments || [];
-        this.comments = comments.map(attrs => new Comment(attrs))
+        this.comments = comments.map(attrs => new Comment(attrs));
 
+        this.isLiked = attributes.isLiked ? new Like(attributes.isLiked) : null;
     }
 
-    setLike(like) {
-        this.isLiked = like;
-        this.isLiked ? this.likesCount++ : this.likesCount--;
+    setLike(model) {
+        if(!model) {
+            let model = new Like({
+                news_id: 1,
+                author_id: 1
+            });
+            return model.save().then(function(data) {
+                return new Like(data);
+            });
+        } else {
+            return model.remove().then(function(data) {
+                return null;
+            });
+        }
     }
 
     addComment(data) {
         let attrs = Object.assign({}, data);
-            attrs.author = "E.T.";
-            attrs.create_time = new Date();
-
         let model = new Comment(attrs);
         return model.save();
     }

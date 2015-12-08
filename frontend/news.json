@@ -5,7 +5,12 @@
   "short_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg",
   "likesCount": "4",
-  "isLiked": true,
+  "isLiked": {
+    "id": "1",
+    "news_id": "3",
+    "author_id": "3",
+    "create_time": "1447962731"
+  },
   "comments": [{
       "id": "1",
       "author": "Evgeniy Tokovenko",
@@ -24,7 +29,7 @@
   "short_text": "Nulla sit amet semper turpis, in eleifend tortor.",
   "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg",
   "likesCount": "11",
-  "isLiked": false
+  "isLiked": null
 }, {
   "id": "1",
   "name": "News 1",
@@ -32,5 +37,5 @@
   "short_text": "Nunc non odio ac sem aliquet viverra. Sed eu purus elit. Phasellus ac iaculis odio. In eu libero a augue imperdiet elementum a sed elit.",
   "image": "http://ichef.bbci.co.uk/images/ic/480x270/p032tt6g.jpg",
   "likesCount": "8",
-  "isLiked": false
+  "isLiked": null
 }]
