@@ -9,7 +9,7 @@ class Model {
         this.addBehaviour('beforeSave', () => {
             this.setAttribute('create_time', new Date());
         });
-        this.addBehaviour('afterSave', function() {
+        this.addBehaviour('afterSave', () => {
             console.log('afterSave...');
         });
 

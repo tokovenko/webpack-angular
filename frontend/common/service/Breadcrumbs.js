@@ -5,13 +5,13 @@ export default angular
 
         breadcrumbs.list = [];
 
-        breadcrumbs.add = function(label, state) {
+        breadcrumbs.add = (label, state) => {
             let breadcrumb = state ? {label: label, state: state} : {label: label};
             breadcrumbs.list.push(breadcrumb);
             return breadcrumbs;
         };
 
-        breadcrumbs.clear = function() {
+        breadcrumbs.clear = () => {
             breadcrumbs.list = [];
             return breadcrumbs;
         };

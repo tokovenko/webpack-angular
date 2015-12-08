@@ -7,23 +7,23 @@ export default angular
     .service('News', ['$q', '$timeout', '$http', alert, function($q, $timeout, $http, Alerts) {
         var news = {};
 
-        news.findAll = function() {
+        news.findAll = () => {
             var defer = $q.defer();
             $http({
                 url: '/' + newsJson
-            }).then(function(response) {
+            }).then((response) => {
                 let news = response.data || [];
                 let models = news.map(data => new News(data));
                 defer.resolve(models);
-            }, function() {
+            }, () => {
                 Alerts.add('danger','Fail to load news...')
             });
             return defer.promise;
         };
 
-        news.findOne = function(key) {
+        news.findOne = (key) => {
             var defer = $q.defer();
-            news.findAll().then(function(list) {
+            news.findAll().then((list) => {
                 defer.resolve(list[key]);
             });
             return defer.promise;

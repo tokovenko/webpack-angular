@@ -6,14 +6,14 @@ let NewsViewController = ($scope, Breadcrumbs, Alert, newsItem) => {
     $scope.addComment = (data) => {
         newsItem
             .addComment(data)
-            .then(function(comment) {
-                $scope.$apply(function() {
+            .then((comment) => {
+                $scope.$apply(() => {
                     newsItem.comments.push(comment);
                     data.text = '';
                 });
             })
-            .catch(function() {
-                $scope.$apply(function() {
+            .catch(() => {
+                $scope.$apply(() => {
                     Alert.add('danger', 'Comment added fail');
                 });
             });

@@ -4,9 +4,11 @@ class HttpRequest {
         var url = config.url || '';
         var type = config.type || 'get';
         var modelName = config.modelName;
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
+
             var oReq = new XMLHttpRequest();
-            oReq.onload = function(e) {
+
+            oReq.onload = (e) => {
                 if(oReq.status==200) {
                     resolve((modelName ? attrs[modelName] : attrs));
                 } else {
@@ -14,10 +16,13 @@ class HttpRequest {
                     reject({});
                 }
             };
-            oReq.onerror = function() {
+
+            oReq.onerror = () => {
                 reject();
             };
+
             oReq.open(type, url, true);
+
             oReq.send(JSON.stringify(attrs));
         });
     }

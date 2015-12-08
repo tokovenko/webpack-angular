@@ -22,11 +22,11 @@ class News {
                 news_id: 1,
                 author_id: 1
             });
-            return model.save().then(function(data) {
+            return model.save().then((data) => {
                 return new Like(data);
             });
         } else {
-            return model.remove().then(function(data) {
+            return model.remove().then(() => {
                 return null;
             });
         }

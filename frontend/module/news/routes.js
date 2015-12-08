@@ -8,7 +8,7 @@ export default function ($stateProvider) {
             templateUrl: '/' + newsTemplate,
             controller: "NewsController",
             resolve: {
-                newsList: function(News) {
+                newsList: (News) => {
                     return News.findAll();
                 }
             }
@@ -18,7 +18,7 @@ export default function ($stateProvider) {
             templateUrl:  '/' + newsViewTemplate,
             controller: "NewsViewController",
             resolve: {
-                newsItem: function(News, $stateParams) {
+                newsItem: (News, $stateParams) => {
                     return new News.findOne($stateParams.id-1);
                 }
             }

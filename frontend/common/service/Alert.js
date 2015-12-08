@@ -12,18 +12,18 @@ export default angular
 
         service.list = [];
 
-        service.add = function(type, message) {
+        service.add = (type, message) => {
             let model = new Alert(type, message);
             service.list.push(model);
             return service;
         };
 
-        service.clear = function() {
+        service.clear = () => {
             service.list = [];
             return service;
         };
 
-        service.remove = function(alert) {
+        service.remove = (alert) => {
             let index = service.list.indexOf(alert);
             service.list.splice(index, 1);
             return service;
@@ -39,8 +39,8 @@ export default angular
                 delete: '='
             },
             controller: function($scope, $timeout) {
-                $scope.timeoutRemove = function(alert) {
-                    $timeout(function() {
+                $scope.timeoutRemove = (alert) => {
+                    $timeout(() => {
                         $scope.delete(alert);
                     }, 2000);
                 }

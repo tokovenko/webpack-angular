@@ -15,7 +15,7 @@ import "./index.html";
 
 angular
     .module('app', [about, home, news, error, breadcrumbs, alert, router])
-    .config(function ($locationProvider, $urlRouterProvider, $stateProvider) {
+    .config(($locationProvider, $urlRouterProvider, $stateProvider) => {
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false
@@ -23,19 +23,18 @@ angular
 
         $urlRouterProvider.otherwise('/404');
     })
-    .controller('MainController', ['$rootScope', '$scope', breadcrumbs, alert, function ($rootScope, $scope, Breadcrumbs, Alerts) {
-        var self = this;
-        self.breadcrumbs = Breadcrumbs;
-        self.alerts = Alerts;
+    .controller('MainController', ['$rootScope', '$scope', breadcrumbs, alert, function($rootScope, $scope, Breadcrumbs, Alerts) {
+        this.breadcrumbs = Breadcrumbs;
+        this.alerts = Alerts;
 
-        self.preloader = false;
-        $rootScope.$on('$stateChangeStart', function() {
-            self.preloader = true;
+        this.preloader = false;
+        $rootScope.$on('$stateChangeStart', () => {
+            this.preloader = true;
         });
-        $rootScope.$on('$stateChangeSuccess', function() {
-            self.preloader = false;
+        $rootScope.$on('$stateChangeSuccess', () => {
+            this.preloader = false;
         });
-        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-            self.preloader = false;
+        $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
+            this.preloader = false;
         });
     }]);
