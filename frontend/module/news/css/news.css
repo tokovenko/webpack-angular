@@ -7,7 +7,10 @@
 #content .list>ul>li {
     padding: 0px;
     list-style: none;
-    margin: 0;
+    margin: 0 0 10px 0;
+}
+#content .list>ul>li:nth-child(3n+1) {
+    clear: left;
 }
 #content .list>ul>li>a {
     color: #363636;
