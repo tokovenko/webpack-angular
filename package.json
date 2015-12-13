@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/tokovenko/webpack-angular#readme",
   "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
     "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
     "html-minify-loader": "^1.0.0",
     "html-webpack-plugin": "^1.7.0",
     "node-sass": "^3.4.2",
@@ -26,7 +31,7 @@
     "webpack": "^1.12.9"
   },
   "dependencies": {
-    "extract-text-webpack-plugin": "^0.9.1",
-    "file-loader": "^0.8.5"
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15"
   }
 }
