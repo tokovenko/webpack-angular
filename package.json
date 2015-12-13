@@ -14,7 +14,7 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tokovenko/webpack-angular/issues"
-  },
+  }, 
   "homepage": "https://github.com/tokovenko/webpack-angular#readme",
   "devDependencies": {
     "babel-core": "^6.3.17",
